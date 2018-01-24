@@ -12,13 +12,15 @@ public class EquipoFutbol
     private int victorias;
     private int empates;
     private int derrotas;
+    private int id;
 
     /**
      * Constructor for objects of class EquipoFutbol
      */
-    public EquipoFutbol(String nombre)
+    public EquipoFutbol(String nombre, int id)
     {
         this.nombre = nombre;
+        this.id = id;
         victorias = 0;
         empates = 0;
         derrotas = 0;
@@ -93,6 +95,7 @@ public class EquipoFutbol
      */
     public void getDatos()
     {
-        System.out.println("Nombre del equipo " + nombre + " Victorias: " + victorias + " Empates: " + empates + " Derrotas: " + derrotas);
+        System.out.println("ID: " + id + " Nombre del equipo: " + nombre + " Victorias: "
+        + victorias + " Empates: " + empates + " Derrotas: " + derrotas);
     }
 }
