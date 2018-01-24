@@ -23,15 +23,22 @@ public class LigaDeFutbol
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Añade un equipo nuevo
      */
     public void añadirEquipo(String nombre)
     {
         equipo = new EquipoFutbol(nombre,id);
         listaEquipos.add(equipo);
         id++;
+    }
+    
+    /**
+     * Muestra una lista de los equipos
+     */
+    public void listEquipos()
+    {
+        for(EquipoFutbol lista : listaEquipos) {
+            System.out.println(lista.getDatos());
+        }
     }
 }

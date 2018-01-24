@@ -93,9 +93,9 @@ public class EquipoFutbol
     /**
      * Muestra los datos de un equipo
      */
-    public void getDatos()
+    public String getDatos()
     {
-        System.out.println("ID: " + id + " Nombre del equipo: " + nombre + " Victorias: "
-        + victorias + " Empates: " + empates + " Derrotas: " + derrotas);
+        return "ID: " + id + " Nombre del equipo: " + nombre + " Victorias: "
+        + victorias + " Empates: " + empates + " Derrotas: " + derrotas;
     }
 }
