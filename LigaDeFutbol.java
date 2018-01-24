@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Write a description of class LigaDeFutbol here.
@@ -8,15 +9,17 @@
 public class LigaDeFutbol
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private ArrayList<EquipoFutbol> listaEquipos;
+    private EquipoFutbol equipo;
+    private int id;
 
     /**
      * Constructor for objects of class LigaDeFutbol
      */
     public LigaDeFutbol()
     {
-        // initialise instance variables
-        x = 0;
+        listaEquipos = new ArrayList<EquipoFutbol>();
+        id = 1;
     }
 
     /**
@@ -25,9 +28,10 @@ public class LigaDeFutbol
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public void añadirEquipo(String nombre)
     {
-        // put your code here
-        return x + y;
+        equipo = new EquipoFutbol(nombre,id);
+        listaEquipos.add(equipo);
+        id++;
     }
 }
