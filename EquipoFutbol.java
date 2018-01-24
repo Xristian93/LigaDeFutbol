@@ -87,4 +87,12 @@ public class EquipoFutbol
     {
         return derrotas;
     }
+    
+    /**
+     * Muestra los datos de un equipo
+     */
+    public void getDatos()
+    {
+        System.out.println("Nombre del equipo " + nombre + " Victorias: " + victorias + " Empates: " + empates + " Derrotas: " + derrotas);
+    }
 }
