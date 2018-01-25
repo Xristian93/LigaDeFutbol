@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Iterator;
 /**
  * Write a description of class LigaDeFutbol here.
  *
@@ -31,7 +31,7 @@ public class LigaDeFutbol
         listaEquipos.add(equipo);
         id++;
     }
-    
+
     /**
      * Muestra una lista de los equipos
      */
@@ -39,6 +39,37 @@ public class LigaDeFutbol
     {
         for(EquipoFutbol lista : listaEquipos) {
             System.out.println(lista.getDatos());
+        }
+    }
+
+    /**
+     * Cambia el numero de victorias de un equipo
+     */
+    public void cambiarVictorias(int index, int victorias){
+        listaEquipos.get(index).setVictorias(victorias);
+    }
+
+    /**
+     * Ordena el array por numero de victorias, de mayor a menor.
+     */
+    public void ordenarPorVictorias() {
+        int victoriaTopeMasCercana = -1;
+        int victoriaMasAlta = 0;
+        for (EquipoFutbol listaActual : listaEquipos){
+            if(listaActual.getVictorias() >= 0) {
+                if (listaActual.getVictorias() > victoriaTopeMasCercana){
+                    victoriaTopeMasCercana = listaActual.getVictorias();
+                    victoriaMasAlta = listaActual.getVictorias();
+                }                  
+            }
+        }
+        while (victoriaMasAlta >= 0){
+            for (EquipoFutbol listaActual : listaEquipos){
+                if (listaActual.getVictorias() == victoriaMasAlta){
+                    System.out.println(listaActual.getDatos());
+                }
+            }
+            victoriaMasAlta--;
         }
     }
 }
