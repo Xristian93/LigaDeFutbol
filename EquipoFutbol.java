@@ -98,4 +98,12 @@ public class EquipoFutbol
         return "ID: " + id + " Nombre del equipo: " + nombre + " Victorias: "
         + victorias + " Empates: " + empates + " Derrotas: " + derrotas;
     }
+    
+    /**
+     * Muestra el ID de un equipo
+     */
+    public int getId()
+    {
+        return id;
+    }
 }

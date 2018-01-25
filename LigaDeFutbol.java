@@ -103,4 +103,15 @@ public class LigaDeFutbol
             derrotaMasAlta--;
         }
     }
+    
+    /**
+     * Cambia el numero de derrotas de un equipo indicando el id del mismo
+     */
+    public void cambiarDerrotasPorId(int id, int derrotas){
+        for (int i = 0; i < listaEquipos.size(); i++){
+                if (listaEquipos.get(i).getId() == id){
+                    listaEquipos.get(i).setDerrotas(derrotas);
+                }
+            }
+    }
 }
