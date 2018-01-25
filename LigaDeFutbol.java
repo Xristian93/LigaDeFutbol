@@ -72,4 +72,35 @@ public class LigaDeFutbol
             victoriaMasAlta--;
         }
     }
+    
+    /**
+     * Cambia el numero de derrotas de un equipo
+     */
+    public void cambiarDerrotas(int index, int derrotas){
+        listaEquipos.get(index).setDerrotas(derrotas);
+    }
+    
+    /**
+     * Ordena el array por numero de derrotas, de mayor a menor.
+     */
+    public void ordenarPorDerrotas() {
+        int derrotaTopeMasCercana = -1;
+        int derrotaMasAlta = 0;
+        for (EquipoFutbol listaActual : listaEquipos){
+            if(listaActual.getDerrotas() >= 0) {
+                if (listaActual.getDerrotas() > derrotaTopeMasCercana){
+                    derrotaTopeMasCercana = listaActual.getDerrotas();
+                    derrotaMasAlta = listaActual.getDerrotas();
+                }                  
+            }
+        }
+        while (derrotaMasAlta >= 0){
+            for (EquipoFutbol listaActual : listaEquipos){
+                if (listaActual.getDerrotas() == derrotaMasAlta){
+                    System.out.println(listaActual.getDatos());
+                }
+            }
+            derrotaMasAlta--;
+        }
+    }
 }
