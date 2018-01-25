@@ -114,4 +114,18 @@ public class LigaDeFutbol
                 }
             }
     }
+    
+    /**
+     * Elimina todos los equipos con menos victorias de las indicadas
+     */
+    public void eliminarPorVictorias(int searchVictoria){
+        Iterator<EquipoFutbol> it = listaEquipos.iterator();
+        while (it.hasNext()){
+            EquipoFutbol t = it.next();
+            int numVictorias = t.getVictorias();
+            if (numVictorias < searchVictoria){
+                it.remove();
+            }
+        }
+    }
 }
