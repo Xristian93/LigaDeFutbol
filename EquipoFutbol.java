@@ -17,13 +17,13 @@ public class EquipoFutbol
     /**
      * Constructor for objects of class EquipoFutbol
      */
-    public EquipoFutbol(String nombre, int id)
+    public EquipoFutbol(String nombre, int victorias, int empates, int derrotas, int id)
     {
         this.nombre = nombre;
         this.id = id;
-        victorias = 0;
-        empates = 0;
-        derrotas = 0;
+        this.victorias = victorias;
+        this.empates = empates;
+        this.derrotas = derrotas;
     }
 
     /**

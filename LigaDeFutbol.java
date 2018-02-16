@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 /**
  * Write a description of class LigaDeFutbol here.
  *
@@ -16,18 +19,34 @@ public class LigaDeFutbol
     /**
      * Constructor for objects of class LigaDeFutbol
      */
-    public LigaDeFutbol()
+    public LigaDeFutbol(String archivoTxt)
     {
         listaEquipos = new ArrayList<EquipoFutbol>();
         id = 1;
+        try {
+            File archivo = new File(archivoTxt);
+            Scanner sc = new Scanner(archivo);
+            while (sc.hasNextLine()) {
+                String[] arrayStrings = sc.nextLine().split(" # ");
+                String nombre = arrayStrings[0];
+                int victorias = Integer.parseInt(arrayStrings[1]);
+                int empates = Integer.parseInt(arrayStrings[2]);
+                int derrotas = Integer.parseInt(arrayStrings[3]);
+                añadirEquipo(nombre, victorias, empates, derrotas);
+            }
+            sc.close();
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * Añade un equipo nuevo
      */
-    public void añadirEquipo(String nombre)
+    public void añadirEquipo(String nombre, int victorias, int empates, int derrotas)
     {
-        equipo = new EquipoFutbol(nombre,id);
+        equipo = new EquipoFutbol(nombre, victorias, empates, derrotas, id);
         listaEquipos.add(equipo);
         id++;
     }
@@ -72,14 +91,14 @@ public class LigaDeFutbol
             victoriaMasAlta--;
         }
     }
-    
+
     /**
      * Cambia el numero de derrotas de un equipo
      */
     public void cambiarDerrotas(int index, int derrotas){
         listaEquipos.get(index).setDerrotas(derrotas);
     }
-    
+
     /**
      * Ordena el array por numero de derrotas, de mayor a menor.
      */
@@ -103,18 +122,18 @@ public class LigaDeFutbol
             derrotaMasAlta--;
         }
     }
-    
+
     /**
      * Cambia el numero de derrotas de un equipo indicando el id del mismo
      */
     public void cambiarDerrotasPorId(int id, int derrotas){
         for (int i = 0; i < listaEquipos.size(); i++){
-                if (listaEquipos.get(i).getId() == id){
-                    listaEquipos.get(i).setDerrotas(derrotas);
-                }
+            if (listaEquipos.get(i).getId() == id){
+                listaEquipos.get(i).setDerrotas(derrotas);
             }
+        }
     }
-    
+
     /**
      * Elimina todos los equipos con menos victorias de las indicadas
      */

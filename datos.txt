@@ -1,0 +1,4 @@
+Liverpool # 5 # 4 # 2
+United # 3 # 3 # 3
+Chelsea # 4 # 1 # 1
+Everton # 1 # 2 # 3

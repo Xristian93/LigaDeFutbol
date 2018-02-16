@@ -8,12 +8,6 @@ public class UnitTests {
     LigaDeFutbol LigaDeFutbol1 = new LigaDeFutbol();
     System.out.println("Añadiendo 6 equipos a la coleccion...");
     System.out.println(" ");
-    LigaDeFutbol1.añadirEquipo("Liverpool");
-    LigaDeFutbol1.añadirEquipo("Manchester United");
-    LigaDeFutbol1.añadirEquipo("Manchester City");
-    LigaDeFutbol1.añadirEquipo("Chelsea");
-    LigaDeFutbol1.añadirEquipo("Arsenal");
-    LigaDeFutbol1.añadirEquipo("Everton");
     //Cambiando numero de victorias y derrotas de los equipos
     LigaDeFutbol1.cambiarVictorias(0,10);   LigaDeFutbol1.cambiarDerrotas(0,1);
     LigaDeFutbol1.cambiarVictorias(1,4);    LigaDeFutbol1.cambiarDerrotas(1,10);
