@@ -168,6 +168,31 @@ public class LigaDeFutbol
                     listaEquiposActual.add(listaEquipos.get(j));
                 }
             }
+            System.out.println(calidadActual);
+            for (EquipoFutbol equipo : listaEquiposActual){
+                System.out.println(equipo.getDatos());
+            }
+            System.out.println("");
+        }
+    }
+
+    /**
+     * Muestra los equipos en funcion de su calidad y tambien alfabeticamente
+     */
+    public void equiposPorCalidadYAlfabeticamente(){
+        String [] arrayCalidad = new String [3];
+        arrayCalidad[0] = "malo";
+        arrayCalidad[1] = "regular";
+        arrayCalidad[2] = "bueno";
+        String calidadActual = null;
+        for (int i = 0; i < 3; i++){
+            calidadActual = arrayCalidad[i];
+            ArrayList<EquipoFutbol> listaEquiposActual = new ArrayList<EquipoFutbol>();
+            for (int j = 0; j < listaEquipos.size(); j++){
+                if (listaEquipos.get(j).getCalidad().toLowerCase().equals(calidadActual)){
+                    listaEquiposActual.add(listaEquipos.get(j));
+                }
+            }
             
             Collections.sort(listaEquiposActual, new Comparator<EquipoFutbol>(){
                 public int compare(EquipoFutbol equipo1, EquipoFutbol equipo2){
@@ -182,5 +207,4 @@ public class LigaDeFutbol
             System.out.println("");
         }
     }
-
 }
