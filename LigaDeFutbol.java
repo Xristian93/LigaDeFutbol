@@ -3,8 +3,8 @@ import java.util.Iterator;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.Collections;
+import java.util.Comparator;
 /**
  * Write a description of class LigaDeFutbol here.
  *
@@ -168,6 +168,13 @@ public class LigaDeFutbol
                     listaEquiposActual.add(listaEquipos.get(j));
                 }
             }
+            
+            Collections.sort(listaEquiposActual, new Comparator<EquipoFutbol>(){
+                public int compare(EquipoFutbol equipo1, EquipoFutbol equipo2){
+                    return equipo1.getNombre().compareTo(equipo2.getNombre());
+                }
+            });
+            
             System.out.println(calidadActual);
             for (EquipoFutbol equipo : listaEquiposActual){
                 System.out.println(equipo.getDatos());
