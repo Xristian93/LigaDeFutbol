@@ -1,3 +1,4 @@
+import java.util.HashSet;
 
 /**
  * Write a description of class EquipoFutbol here.
@@ -13,17 +14,24 @@ public class EquipoFutbol
     private int empates;
     private int derrotas;
     private int id;
+    private String calidad;
 
     /**
      * Constructor for objects of class EquipoFutbol
      */
-    public EquipoFutbol(String nombre, int victorias, int empates, int derrotas, int id)
+    public EquipoFutbol(String nombre, int victorias, int empates, int derrotas, int id, String calidad)
     {
         this.nombre = nombre;
         this.id = id;
         this.victorias = victorias;
         this.empates = empates;
         this.derrotas = derrotas;
+        if (calidad.toLowerCase().equals("bueno") || calidad.toLowerCase().equals("malo") || calidad.toLowerCase().equals("regular")){
+            this.calidad = calidad;
+        }
+        else{
+            this.calidad = null;
+        }
     }
 
     /**
@@ -96,7 +104,7 @@ public class EquipoFutbol
     public String getDatos()
     {
         return "ID: " + id + " Nombre del equipo: " + nombre + " Victorias: "
-        + victorias + " Empates: " + empates + " Derrotas: " + derrotas;
+        + victorias + " Empates: " + empates + " Derrotas: " + derrotas + " Calidad: " + calidad;
     }
     
     /**
@@ -105,5 +113,12 @@ public class EquipoFutbol
     public int getId()
     {
         return id;
+    }
+    
+    /**
+     * Muestra la calidad del equipo
+     */
+    public String getCalidad(){
+        return calidad;
     }
 }

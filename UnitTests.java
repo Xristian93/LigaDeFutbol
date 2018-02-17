@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 public class UnitTests {
   public void test01() {
-    LigaDeFutbol LigaDeFutbol1 = new LigaDeFutbol();
+    LigaDeFutbol LigaDeFutbol1 = new LigaDeFutbol("datos2.txt");
     System.out.println("Añadiendo 6 equipos a la coleccion...");
     System.out.println(" ");
     //Cambiando numero de victorias y derrotas de los equipos

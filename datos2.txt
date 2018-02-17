@@ -1,0 +1,10 @@
+Liverpool # 5 # 4 # 2 # Bueno
+United # 3 # 3 # 3 # Bueno
+Chelsea # 4 # 1 # 1 # Regular
+Everton # 1 # 2 # 3 # Malo
+Crystal Palace # 1 # 4 # 6 # Malo
+City # 4 # 3 # 3 # Bueno
+Newcastle # 2 # 6 # 1 # Regular
+West Ham # 1 # 2 # 5 # Malo
+Milwall # 2 # 6 # 6 # Malo
+Tottenham # 2 # 2 # 3 # Regular

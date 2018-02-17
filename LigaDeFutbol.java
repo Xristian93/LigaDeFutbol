@@ -3,6 +3,8 @@ import java.util.Iterator;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.HashSet;
 /**
  * Write a description of class LigaDeFutbol here.
  *
@@ -32,7 +34,8 @@ public class LigaDeFutbol
                 int victorias = Integer.parseInt(arrayStrings[1]);
                 int empates = Integer.parseInt(arrayStrings[2]);
                 int derrotas = Integer.parseInt(arrayStrings[3]);
-                añadirEquipo(nombre, victorias, empates, derrotas);
+                String calidad = arrayStrings[4];
+                añadirEquipo(nombre, victorias, empates, derrotas, calidad);
             }
             sc.close();
         }
@@ -44,9 +47,9 @@ public class LigaDeFutbol
     /**
      * Añade un equipo nuevo
      */
-    public void añadirEquipo(String nombre, int victorias, int empates, int derrotas)
+    public void añadirEquipo(String nombre, int victorias, int empates, int derrotas, String calidad)
     {
-        equipo = new EquipoFutbol(nombre, victorias, empates, derrotas, id);
+        equipo = new EquipoFutbol(nombre, victorias, empates, derrotas, id, calidad);
         listaEquipos.add(equipo);
         id++;
     }
@@ -147,4 +150,30 @@ public class LigaDeFutbol
             }
         }
     }
+
+    /**
+     * Muestra los equipos en funcion de su calidad
+     */
+    public void equiposPorCalidad(){
+        String [] arrayCalidad = new String [3];
+        arrayCalidad[0] = "malo";
+        arrayCalidad[1] = "regular";
+        arrayCalidad[2] = "bueno";
+        String calidadActual = null;
+        for (int i = 0; i < 3; i++){
+            calidadActual = arrayCalidad[i];
+            ArrayList<EquipoFutbol> listaEquiposActual = new ArrayList<EquipoFutbol>();
+            for (int j = 0; j < listaEquipos.size(); j++){
+                if (listaEquipos.get(j).getCalidad().toLowerCase().equals(calidadActual)){
+                    listaEquiposActual.add(listaEquipos.get(j));
+                }
+            }
+            System.out.println(calidadActual);
+            for (EquipoFutbol equipo : listaEquiposActual){
+                System.out.println(equipo.getDatos());
+            }
+            System.out.println("");
+        }
+    }
+
 }
