@@ -156,10 +156,20 @@ public class LigaDeFutbol
      */
     public void equiposPorCalidad(){
         String [] arrayCalidad = new String [3];
-        arrayCalidad[0] = "malo";
-        arrayCalidad[1] = "regular";
-        arrayCalidad[2] = "bueno";
         String calidadActual = null;
+        arrayCalidad[0] = listaEquipos.get(0).getCalidad().toLowerCase();
+        int posicionCalidad = 1;
+        int posicionArrayCalidad = 2;
+        int buscando = 2;
+        for (int i = 0; i < listaEquipos.size(); i++){
+            calidadActual = listaEquipos.get(i).getCalidad().toLowerCase();
+            if (!calidadActual.equals(arrayCalidad[0]) && !calidadActual.equals(arrayCalidad[posicionArrayCalidad]) && buscando != 0){
+                    arrayCalidad[posicionCalidad] = calidadActual;
+                    posicionCalidad++;
+                    posicionArrayCalidad--;
+                    buscando--;
+                }
+        }
         for (int i = 0; i < 3; i++){
             calidadActual = arrayCalidad[i];
             ArrayList<EquipoFutbol> listaEquiposActual = new ArrayList<EquipoFutbol>();
@@ -181,10 +191,20 @@ public class LigaDeFutbol
      */
     public void equiposPorCalidadYAlfabeticamente(){
         String [] arrayCalidad = new String [3];
-        arrayCalidad[0] = "malo";
-        arrayCalidad[1] = "regular";
-        arrayCalidad[2] = "bueno";
         String calidadActual = null;
+        arrayCalidad[0] = listaEquipos.get(0).getCalidad().toLowerCase();
+        int posicionCalidad = 1;
+        int posicionArrayCalidad = 2;
+        int buscando = 2;
+        for (int i = 0; i < listaEquipos.size(); i++){
+            calidadActual = listaEquipos.get(i).getCalidad().toLowerCase();
+            if (!calidadActual.equals(arrayCalidad[0]) && !calidadActual.equals(arrayCalidad[posicionArrayCalidad]) && buscando != 0){
+                    arrayCalidad[posicionCalidad] = calidadActual;
+                    posicionCalidad++;
+                    posicionArrayCalidad--;
+                    buscando--;
+                }
+        }
         for (int i = 0; i < 3; i++){
             calidadActual = arrayCalidad[i];
             ArrayList<EquipoFutbol> listaEquiposActual = new ArrayList<EquipoFutbol>();
